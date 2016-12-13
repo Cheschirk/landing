@@ -1,0 +1,329 @@
+{% load staticfiles %}
+<!Doctype html>
+<html>
+<head>
+	<title>Markiza</title>
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+
+</head>
+<body>
+<script type="text/javascript">
+/////////////////////////////////////////////////////////
+// Javascript made by http://peters1.dk/tools/snow.php //
+/////////////////////////////////////////////////////////
+
+// ПОМНИТЕ: Измените путь, где сохранен файл snow.png...
+snow_img = "static/images/31.png";
+
+// ДОПОЛНИТЕЛЬНО: Вы можете легко настроить количество снежинок на каждой странице...
+snow_no = 9;
+
+if (typeof(window.pageYOffset) == "number")
+{
+	snow_browser_width = window.innerWidth;
+	snow_browser_height = window.innerHeight;
+}
+else if (document.body && (document.body.scrollLeft || document.body.scrollTop))
+{
+	snow_browser_width = document.body.offsetWidth;
+	snow_browser_height = document.body.offsetHeight;
+}
+else if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop))
+{
+	snow_browser_width = document.documentElement.offsetWidth;
+	snow_browser_height = document.documentElement.offsetHeight;
+}
+else
+{
+	snow_browser_width = 500;
+	snow_browser_height = 500;
+}
+
+snow_dx = [];
+snow_xp = [];
+snow_yp = [];
+snow_am = [];
+snow_stx = [];
+snow_sty = [];
+
+for (i = 0; i < snow_no; i++)
+{
+	snow_dx[i] = 0;
+	snow_xp[i] = Math.random()*(snow_browser_width-50);
+	snow_yp[i] = Math.random()*snow_browser_height;
+	snow_am[i] = Math.random()*20;
+	snow_stx[i] = 0.02 + Math.random()/10;
+	snow_sty[i] = 0.7 + Math.random();
+	if (i > 0) document.write("<\div id=\"snow_flake"+ i +"\" style=\"position:absolute;z-index:"+i+"\"><\img src=\""+snow_img+"\" border=\"0\"><\/div>"); else document.write("<\div id=\"snow_flake0\" style=\"position:absolute;z-index:0\"><a href=\"http://peters1.dk/tools/snow.php\" target=\"_blank\"><\img src=\""+snow_img+"\" border=\"0\"></a><\/div>");
+}
+
+function SnowStart()
+{
+	for (i = 0; i < snow_no; i++)
+	{
+		snow_yp[i] += snow_sty[i];
+		if (snow_yp[i] > snow_browser_height-50)
+		{
+			snow_xp[i] = Math.random()*(snow_browser_width-snow_am[i]-30);
+			snow_yp[i] = 0;
+			snow_stx[i] = 0.02 + Math.random()/10;
+			snow_sty[i] = 0.7 + Math.random();
+		}
+		snow_dx[i] += snow_stx[i];
+		document.getElementById("snow_flake"+i).style.top=snow_yp[i]+"px";
+		document.getElementById("snow_flake"+i).style.left=snow_xp[i] + snow_am[i]*Math.sin(snow_dx[i])+"px";
+	}
+	snow_time = setTimeout("SnowStart()", 10);
+}
+SnowStart();
+</script>
+<div class="banner">
+	<div class="container">
+		<div class="header">
+			<div class="logo">
+				<h1><a href="#">Markiza</a></h1>
+			</div>
+			<div class="navigation">
+				<span class="menu"><img src="{% static 'images/31.png' %}" alt="" /></span>
+				<ul class="nav1">
+					<li><a class="scroll" href="#home">ДОМОЙ</a></li>
+					<li><a class="scroll" href="#about-us">О НАС</a></li>
+					<li><a class="scroll" href="#portfolio">ПОРОДЫ КОШЕК</a></li>
+					<li><a class="scroll" href="#contact-us">КОНТАКТЫ</a></li>
+				</ul>
+				
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="banner-info">
+			<h1>БОЛЕЕ 50 ПОРОД КОШЕК С РОДОСЛОВНОЙ!</h1>
+		</div>
+	</div>
+</div>
+
+<div id="about-us" class="about-us">
+	<div class="container">
+		<div class="about-info">
+			<h2>О НАС</h2>
+			<p>Если бы кошачье мурлыканье продавалось в таблетках, фармацевтический рынок получил бы идеальное средство против депрессии.</p>
+		</div>
+		<div class="about-grids">
+			<div class="col-md-6 about-left">
+				<img src="{% static 'images/13.jpg' %}" alt=" "/>
+			</div>
+			<div class="col-md-6 about-right">
+				<h2>Мы заботимся о наших животных</h2>
+				<div class="border"></div>
+				<p> Наш питомник занимается разведением Сомалийских и Абиссинских кошек. 
+Мы занимаемся окрасами: дикий, соррель и редкий голубой.  В нашем питомнике Вы сможете купить только породистого котенка с документами для души, выставок и племенного разведения. Заводчик питомника, фелинолог Скленарикова Татьяна.   
+   Котенка стоит покупать только в питомниках - это залог что котенок будет чистокровный и именно принадлежать к данной породе! Котята чистокровные всегда стоят дорого. Никогда не покупайте в зоомагазинах , на рынках или частных объявлениях- есть шанс купить больного или котенка нечистокровного.
+
+В нашем питомнике в договоре и в свидетельстве о рождении котенка всегда прописывается питомник, всегда прописываются его родители. Название питомника это фамилия котенка. Имя которое дается ставится на учет в клуб. В клубе производится осмотр и регистрация помета. Характер кошек особенный, они очень любят людей, особенно детей и всегда прибывают в хорошем настроении. Эти кошки любят помурчать, обнять лапками за шею и лизнуть в лицо. Они с удовольствием играют в любом возрасте. В питомнике все котята растут вместе с нами, получая необходимые социальные навыки общения с людьми и другими животными.
+
+			
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- autoplay; poster="images/play-cat.png" -->
+<div class="vidos" >
+  <video width=" auto" height=" auto" controls="controls"  >
+   <source src="{% static 'video\Cats.mp4' %}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+  </video>
+</div>
+
+<div id="portfolio" class="portfolio">
+	<div class="container">
+		<div class="portfolio-info">
+			<h2>ВЫБЕРИТЕ ПОРОДУ СВОЕГО ЛЮБИМЦА</h2>
+  			<p>У кого есть кошка, тот может не бояться одиночества.</p>
+		</div>
+		<div class="portfolio-grids">
+			<div class="col-md-4 portfolio-grid">
+				<div class="portfolio-image">
+					<div class="port-img">
+                        <img src="{% static 'images/1.jpg' %}" alt=" "/>
+					</div>
+					<div class="desc">
+						<a href="#small-dialog" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">Узнать больше</a>
+					</div>
+					<div class="caption">
+						<ul>
+							<li>Британская короткошерстная кошка </li>
+							<li><span class="right"><i>(BRI)</i></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 portfolio-grid">
+				<div class="portfolio-image">
+					<div class="port-img">
+						<img src="{% static 'images/2.jpg' %}" alt=" "/>
+					</div>
+					<div class="desc">
+						<a href="#small-dialog1" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">Узнать больше</a>
+					</div>
+					<div class="caption">
+						<ul>
+							<li>Персидская кошка </li>
+							<li><span class="left"><i>(PER)</i></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 portfolio-grid">
+				<div class="portfolio-image">
+					<div class="port-img">
+						<img src="{% static 'images/3.jpg' %}" alt=" "/>
+					</div>
+					<div class="desc">
+						<a href="#small-dialog2" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">Узнать больше</a>
+					</div>
+					<div class="caption">
+						<ul>
+							<li>Скоттиш фолд </li>
+							<li><span class="left"><i>(SFL, SFS)</i></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="portfolio-grids">
+			<div class="col-md-4 portfolio-grid">
+				<div class="portfolio-image">
+					<div class="port-img">
+						<img src="{% static 'images/4.jpg' %}" alt=" "/>
+					</div>
+					<div class="desc">
+						<a href="#small-dialog3" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">Узнать больше</a>
+					</div>
+					<div class="caption">
+						<ul>
+							<li>Сиамская короткошерстная кошка </li>
+							<li><span class="right"><i>(SIA)</i></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 portfolio-grid">
+				<div class="portfolio-image">
+					<div class="port-img">
+						<img src="{% static 'images/5.jpg' %}" alt=" "/>
+					</div>
+					<div class="desc">
+						<a href="#small-dialog4" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">Узнать больше</a>
+					</div>
+					<div class="caption">
+						<ul>
+							<li>Мэйн-кун (Мэнская енотовая кошка) </li>
+							<li><span class="right"><i>(MCO)</i></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 portfolio-grid">
+				<div class="portfolio-image">
+					<div class="port-img">
+						<img src="{% static 'images/6.jpg' %}" alt=" "/>
+					</div>
+					<div class="desc">
+						<a href="#small-dialog5" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">Узнать больше</a>
+					</div>
+					<div class="caption">
+						<ul>
+							<li>Донской сфинкс (Русская бесшерстная кошка) (DSX)</li>
+							<li><span class="right"><i>(DSX)</i></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+					<div id="small-dialog" class="mfp-hide">
+						<div class="image-top"  align="center">
+							<img align="middle" src="{% static 'images/1.jpg' %}" alt="" />
+							<div>Британские короткошерстные имеют многовековую историю, что позволяет им сохранять спокойствие и в наши суматошные дни. Они демонстрируют послушание, когда это необходимо и решительно заявят, что хотят поиграть. Любят общество, но иногда своим выражением дают понять, что ждут не дождутся, когда останутся одни. 
+
+Работающие владельцы могут быть спокойны, оставляя их дома. Они могут быть активными и игривыми, но больше любят понежиться в укромном местечке. Они идеальны для содержания в квартире, но и в загородном доме не доставят Вам хлопот: дальше укромного, присмотренного места на участке они не уйдут. 
+						</div>
+						</div>
+					</div>
+					<div id="small-dialog1" class="mfp-hide"  align="center">
+						<div class="image-top">
+							<img src="{% static 'images/2.jpg' %}" alt="" />
+							<p>Персидская - одна из древнейших и по сей день наиболее популярных пород кошек, но точное ее происхождение до сих пор не ясно. Известно, что длинношерстные кошки появились в Европе еще в XVI веке, получив свое название от Персии (Иран), из которой были привезены. За долгие годы селекции, был выведен характер тип персидских кошек, который невозможно ни с кем спутать. Их тело коренастое и плотное, ноги короткие и толстые. Голова - широкая, круглая и массивная. Нос короткий и курносый, с отчетливым стопом. Но главное - это шерсть: длинная (до 15 см) и густая, шелковая на ощупь, с пышным воротником у головы. Персы нетребовательны, не склонны к приключениям и спокойны. Они послушны, тихи, нежны и дружелюбны. Нуждаются в охране от собак, так как не всегда могут убежать от опасности.</p>
+						</div>
+					</div>
+					<div id="small-dialog2" class="mfp-hide"  align="center">
+						<div class="image-top">
+							<img src="{% static 'images/3.jpg' %}" alt="" />
+							<p>Шотландская вислоухая кошка (скоттиш-фолд), порода короткошерстных кошек. Первые кошки этой породы были выведены в Шотландии в 1961 году. На Востоке вислоухие кошки были известны столетия назад. Скоттиш-фолд — кошка средних размеров, крепкого, гармоничного телосложения. Шерсть у нее короткая, густая, эластичная, мягкая, прилегающая к телу. Окрас может быть самым разнообразным: одноцветным, многоцветным, полосатым. Уши поставлены широко и сложены так, что их верхняя часть прикрывает ушное отверстие, то есть свисают вниз. Шотландская вислоухая кошка обладает уравновешенным характером, большой привязанностью к дому и человеку, неприхотлива.</p>
+						</div>
+					</div>
+					<div id="small-dialog3" class="mfp-hide"  align="center">
+						<div class="image-top">
+							<img src="{% static 'images/4.jpg' %}" alt="" />
+							<p>Сиамские кошки отличаются довольно необычным и строптивым нравом. Независимость характера, великолепные охотничьи качества отличают эту кошку от ее более смирных собратьев. А горячий темперамент обусловил ей славу жуткой упрямицы и даже опасной для человека спутницы.</p>
+						</div>
+					</div>
+					<div id="small-dialog4" class="mfp-hide"  align="center">
+						<div class="image-top">
+							<img src="{% static 'images/5.jpg' %}" alt="" />
+							<p>Мэйн-куны - естественно сложившаяся порода кошек Северной Америки. Название, вероятно, произошло из-за традиционного окраса - черного мраморного, который похож на окрас енота. Мэйн-кун - большая, крепкая, сильная, легко переносящая суровый климат кошка прямоугольного формата с некрупной трапециевидной головой, характерной длинной широкой тупой мордой, большими широко поставленными ушами, крупными слегка косо поставленными глазами, длинным мускулистым корпусом, крепкими широко поставленными конечностями с большими круглыми лапами, длинным толстым у основания и всегда хорошо опушенным хвостом, тяжелой обильной шелковистой плотно прилегающей немокнущей шерстью. </p>
+						</div>
+					</div>
+					<div id="small-dialog5" class="mfp-hide"  align="center">
+						<div class="image-top">
+							<img src="{% static 'images/6.jpg' %}" alt="" />
+							<p>Донской сфинкс сравнительно молодая порода, успевшая, тем не менее, завоевать сердца любителей кошек своим загадочным взглядом и экзотическим видом. Донской сфинкс при почти полном отсутствии шерсти имеет крепкое здоровье, мускулистое тело, замечательный характер и пользуется заслуженной популярностью у истинных ценителей кошек. Сфинксы игривы, очень подвижны, любвеобильны и абсолютно не агрессивны.</p>
+						</div>
+					</div>
+			
+		
+	</div>
+</div>
+
+
+
+<div id="contact-us" class="contact-us">
+	<div class="container">
+		<div class="contact-info">
+			<h2>КОНТАКТЫ</h2>
+			<p>Если у вас есть кошка, вы возвращаетесь не в дом, а домой.</p>
+		</div>
+		<div class="contact-grids">
+			<div class="col-md-6 contact-left">
+				<h2>Контактная информация</h2>
+				<div class="border"></div>
+				<p>+380997634555</p>
+				<h3>Address</h3>
+				<ul>
+					<li>Украина,</li>
+					<li>г. Херсон,</li>
+					<li>ул. Запорожская 12,  43488</li>
+				</ul>
+			</div>
+			<div class="col-md-6 contact-right">
+				<form>
+					<input type="text" placeholder="Имя..." required>
+					<input type="text" placeholder="E-Mail..." required>
+					<textarea placeholder="Тема..." required></textarea>
+					<textarea class="text" placeholder="Содержание..." required></textarea>
+					<input type="submit" value="Отправить">
+				</form>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<p>by Leoverenskaya</p>
+</div>
+</body>
+</html>
